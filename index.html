@@ -328,6 +328,9 @@
                                 </span>
                             </div>
                             <input type="file" id="in_ttdGuru" accept="image/*" class="futuristic-file w-full text-xs rounded-xl cursor-pointer focus:outline-none">
+                            <div id="preview_box_ttdGuru" class="hidden mt-2 p-1.5 rounded-xl bg-white/95 border border-emerald-400/40 flex items-center justify-between">
+                                <img id="thumb_ttdGuru" class="h-10 object-contain mx-auto" alt="Pratinjau TTD Guru">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -343,25 +346,23 @@
                         <h2 class="text-xs font-bold text-slate-200 uppercase tracking-widest">02. Detail Kegiatan</h2>
                     </div>
                     <div class="space-y-4">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                            <div>
-                                <label class="block text-xs font-medium text-slate-300 mb-1.5">Hari/Tanggal</label>
-                                <input type="date" id="in_tanggal" class="futuristic-input w-full px-3.5 py-2.5 rounded-xl text-sm">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-medium text-slate-300 mb-1.5">Waktu Pelaksanaan</label>
-                                <input type="text" id="in_waktu" placeholder="Contoh: 07.00 - 16.00 WIB" class="futuristic-input w-full px-3.5 py-2.5 rounded-xl text-sm">
-                            </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1.5">Hari/Tanggal</label>
+                            <input type="date" id="in_tanggal" class="futuristic-input w-full px-4 py-2.5 rounded-xl text-sm">
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                             <div>
-                                <label class="block text-xs font-medium text-slate-300 mb-1.5">Mata Pelajaran/Tupoksi</label>
-                                <input type="text" id="in_mapel" placeholder="Contoh: Instalasi Tenaga Listrik" class="futuristic-input w-full px-3.5 py-2.5 rounded-xl text-sm">
+                                <label class="block text-xs font-medium text-slate-300 mb-1.5">Waktu Pelaksanaan</label>
+                                <input type="text" id="in_waktu" placeholder="07.00 - 16.00 WIB" class="futuristic-input w-full px-4 py-2.5 rounded-xl text-sm font-mono-tech">
                             </div>
                             <div>
                                 <label class="block text-xs font-medium text-slate-300 mb-1.5">Sasaran Kelas/Modul</label>
-                                <input type="text" id="in_kelas" placeholder="Contoh: Kelas XI TL 1" class="futuristic-input w-full px-3.5 py-2.5 rounded-xl text-sm">
+                                <input type="text" id="in_kelas" placeholder="Kelas XI TL 1" class="futuristic-input w-full px-4 py-2.5 rounded-xl text-sm">
                             </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1.5">Mata Pelajaran</label>
+                            <input type="text" id="in_mapel" placeholder="Contoh: Instalasi Tenaga Listrik" class="futuristic-input w-full px-4 py-2.5 rounded-xl text-sm">
                         </div>
                         <div>
                             <label class="block text-xs font-medium text-slate-300 mb-1.5">Rencana Hasil Kerja (RHK)</label>
@@ -408,6 +409,9 @@
                                     </span>
                                 </div>
                                 <input type="file" id="in_logoDinas" accept="image/*" class="futuristic-file w-full text-xs rounded-xl cursor-pointer focus:outline-none">
+                                <div id="preview_box_logoDinas" class="hidden mt-2 p-1.5 rounded-xl bg-white/95 border border-emerald-400/40 flex items-center justify-center">
+                                    <img id="thumb_logoDinas" class="h-10 object-contain" alt="Pratinjau Logo Dinas">
+                                </div>
                             </div>
                             <div>
                                 <div class="flex items-center justify-between mb-1.5">
@@ -418,6 +422,9 @@
                                     </span>
                                 </div>
                                 <input type="file" id="in_logoSekolah" accept="image/*" class="futuristic-file w-full text-xs rounded-xl cursor-pointer focus:outline-none">
+                                <div id="preview_box_logoSekolah" class="hidden mt-2 p-1.5 rounded-xl bg-white/95 border border-emerald-400/40 flex items-center justify-center">
+                                    <img id="thumb_logoSekolah" class="h-10 object-contain" alt="Pratinjau Logo Sekolah">
+                                </div>
                             </div>
                         </div>
                         <div>
@@ -450,6 +457,9 @@
                                     </span>
                                 </div>
                                 <input type="file" id="in_ttdKepsek" accept="image/*" class="futuristic-file w-full text-xs rounded-xl cursor-pointer focus:outline-none">
+                                <div id="preview_box_ttdKepsek" class="hidden mt-2 p-1.5 rounded-xl bg-white/95 border border-emerald-400/40 flex items-center justify-center">
+                                    <img id="thumb_ttdKepsek" class="h-10 object-contain" alt="Pratinjau TTD Kepsek">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -475,51 +485,89 @@
                             <textarea id="in_output" rows="3" placeholder="Contoh: Siswa mampu memasang instalasi tenaga listrik 3 Fasa." class="futuristic-input w-full px-4 py-2.5 rounded-xl text-sm resize-y"></textarea>
                         </div>
                         <div class="pt-3 border-t border-slate-800">
-                            <label class="block text-xs font-semibold text-cyan-300 mb-2.5">Dokumentasi Foto Kegiatan (Maksimal 4 Foto)</label>
+                            <div class="flex items-center justify-between mb-2.5">
+                                <label class="block text-xs font-semibold text-cyan-300">Dokumentasi Foto Kegiatan (Maksimal 4 Foto)</label>
+                                <span class="text-[10px] font-mono-tech text-slate-400">Otomatis dikompresi &amp; tersimpan</span>
+                            </div>
                             <div class="space-y-3">
-                                <div class="flex items-center gap-2">
-                                    <div class="flex-grow">
-                                        <label class="block text-[11px] text-slate-400 mb-1">Foto 1</label>
-                                        <input type="file" id="in_foto1" accept="image/*" class="futuristic-file w-full text-xs rounded-xl cursor-pointer focus:outline-none">
+                                <div class="bg-slate-950/50 p-2.5 rounded-xl border border-slate-800/80">
+                                    <div class="flex items-center gap-2">
+                                        <div class="flex-grow">
+                                            <div class="flex items-center justify-between mb-1">
+                                                <label class="block text-[11px] text-slate-400">Foto 1</label>
+                                                <span id="saved_status_foto1" class="hidden text-[10px] font-medium text-emerald-300 bg-emerald-500/15 border border-emerald-400/30 px-2 py-0.5 rounded-full">Tersimpan</span>
+                                            </div>
+                                            <input type="file" id="in_foto1" accept="image/*" class="futuristic-file w-full text-xs rounded-xl cursor-pointer focus:outline-none">
+                                        </div>
+                                        <button type="button" onclick="clearSavedImage('foto1')" class="mt-5 text-rose-400 hover:text-rose-300 p-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 transition-colors cursor-pointer" title="Hapus Foto 1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
                                     </div>
-                                    <button type="button" onclick="document.getElementById('in_foto1').value=''" class="mt-5 text-rose-400 hover:text-rose-300 p-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 transition-colors cursor-pointer" title="Hapus Foto">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-                                        </svg>
-                                    </button>
+                                    <div id="preview_box_foto1" class="hidden mt-2 p-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 flex justify-center">
+                                        <img id="thumb_foto1" class="max-h-20 object-contain rounded" alt="Pratinjau Foto 1">
+                                    </div>
                                 </div>
-                                <div class="flex items-center gap-2">
-                                    <div class="flex-grow">
-                                        <label class="block text-[11px] text-slate-400 mb-1">Foto 2 (Opsional)</label>
-                                        <input type="file" id="in_foto2" accept="image/*" class="futuristic-file w-full text-xs rounded-xl cursor-pointer focus:outline-none">
+
+                                <div class="bg-slate-950/50 p-2.5 rounded-xl border border-slate-800/80">
+                                    <div class="flex items-center gap-2">
+                                        <div class="flex-grow">
+                                            <div class="flex items-center justify-between mb-1">
+                                                <label class="block text-[11px] text-slate-400">Foto 2 (Opsional)</label>
+                                                <span id="saved_status_foto2" class="hidden text-[10px] font-medium text-emerald-300 bg-emerald-500/15 border border-emerald-400/30 px-2 py-0.5 rounded-full">Tersimpan</span>
+                                            </div>
+                                            <input type="file" id="in_foto2" accept="image/*" class="futuristic-file w-full text-xs rounded-xl cursor-pointer focus:outline-none">
+                                        </div>
+                                        <button type="button" onclick="clearSavedImage('foto2')" class="mt-5 text-rose-400 hover:text-rose-300 p-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 transition-colors cursor-pointer" title="Hapus Foto 2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
                                     </div>
-                                    <button type="button" onclick="document.getElementById('in_foto2').value=''" class="mt-5 text-rose-400 hover:text-rose-300 p-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 transition-colors cursor-pointer" title="Hapus Foto">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-                                        </svg>
-                                    </button>
+                                    <div id="preview_box_foto2" class="hidden mt-2 p-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 flex justify-center">
+                                        <img id="thumb_foto2" class="max-h-20 object-contain rounded" alt="Pratinjau Foto 2">
+                                    </div>
                                 </div>
-                                <div class="flex items-center gap-2">
-                                    <div class="flex-grow">
-                                        <label class="block text-[11px] text-slate-400 mb-1">Foto 3 (Opsional)</label>
-                                        <input type="file" id="in_foto3" accept="image/*" class="futuristic-file w-full text-xs rounded-xl cursor-pointer focus:outline-none">
+
+                                <div class="bg-slate-950/50 p-2.5 rounded-xl border border-slate-800/80">
+                                    <div class="flex items-center gap-2">
+                                        <div class="flex-grow">
+                                            <div class="flex items-center justify-between mb-1">
+                                                <label class="block text-[11px] text-slate-400">Foto 3 (Opsional)</label>
+                                                <span id="saved_status_foto3" class="hidden text-[10px] font-medium text-emerald-300 bg-emerald-500/15 border border-emerald-400/30 px-2 py-0.5 rounded-full">Tersimpan</span>
+                                            </div>
+                                            <input type="file" id="in_foto3" accept="image/*" class="futuristic-file w-full text-xs rounded-xl cursor-pointer focus:outline-none">
+                                        </div>
+                                        <button type="button" onclick="clearSavedImage('foto3')" class="mt-5 text-rose-400 hover:text-rose-300 p-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 transition-colors cursor-pointer" title="Hapus Foto 3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
                                     </div>
-                                    <button type="button" onclick="document.getElementById('in_foto3').value=''" class="mt-5 text-rose-400 hover:text-rose-300 p-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 transition-colors cursor-pointer" title="Hapus Foto">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-                                        </svg>
-                                    </button>
+                                    <div id="preview_box_foto3" class="hidden mt-2 p-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 flex justify-center">
+                                        <img id="thumb_foto3" class="max-h-20 object-contain rounded" alt="Pratinjau Foto 3">
+                                    </div>
                                 </div>
-                                <div class="flex items-center gap-2">
-                                    <div class="flex-grow">
-                                        <label class="block text-[11px] text-slate-400 mb-1">Foto 4 (Opsional)</label>
-                                        <input type="file" id="in_foto4" accept="image/*" class="futuristic-file w-full text-xs rounded-xl cursor-pointer focus:outline-none">
+
+                                <div class="bg-slate-950/50 p-2.5 rounded-xl border border-slate-800/80">
+                                    <div class="flex items-center gap-2">
+                                        <div class="flex-grow">
+                                            <div class="flex items-center justify-between mb-1">
+                                                <label class="block text-[11px] text-slate-400">Foto 4 (Opsional)</label>
+                                                <span id="saved_status_foto4" class="hidden text-[10px] font-medium text-emerald-300 bg-emerald-500/15 border border-emerald-400/30 px-2 py-0.5 rounded-full">Tersimpan</span>
+                                            </div>
+                                            <input type="file" id="in_foto4" accept="image/*" class="futuristic-file w-full text-xs rounded-xl cursor-pointer focus:outline-none">
+                                        </div>
+                                        <button type="button" onclick="clearSavedImage('foto4')" class="mt-5 text-rose-400 hover:text-rose-300 p-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 transition-colors cursor-pointer" title="Hapus Foto 4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
                                     </div>
-                                    <button type="button" onclick="document.getElementById('in_foto4').value=''" class="mt-5 text-rose-400 hover:text-rose-300 p-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 transition-colors cursor-pointer" title="Hapus Foto">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-                                        </svg>
-                                    </button>
+                                    <div id="preview_box_foto4" class="hidden mt-2 p-1.5 rounded-lg bg-slate-900 border border-emerald-500/30 flex justify-center">
+                                        <img id="thumb_foto4" class="max-h-20 object-contain rounded" alt="Pratinjau Foto 4">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -839,7 +887,7 @@
             showToast('Gemini API Key berhasil disimpan di browser!');
         });
 
-        // --- MANAJEMEN PENYIMPANAN FORMULIR (LOCAL STORAGE) ---
+        // --- MANAJEMEN PENYIMPANAN FORMULIR & GAMBAR (LOCAL STORAGE) ---
         const STORAGE_KEY_FORM = 'ekinerja_form_data_v1';
         const FORM_FIELD_IDS = [
             'in_namaGuru', 'in_nipGuru', 'in_jabatan',
@@ -850,16 +898,26 @@
             'in_deskripsi', 'in_output'
         ];
 
-        // State penyimpanan gambar tetap (Logo & Tanda Tangan)
+        // State penyimpanan gambar tetap (Logo, Tanda Tangan & Foto Dokumentasi)
+        const ALL_IMAGE_KEYS = ['ttdGuru', 'ttdKepsek', 'logoDinas', 'logoSekolah', 'foto1', 'foto2', 'foto3', 'foto4'];
         let savedImages = {
             ttdGuru: null,
             ttdKepsek: null,
             logoDinas: null,
-            logoSekolah: null
+            logoSekolah: null,
+            foto1: null,
+            foto2: null,
+            foto3: null,
+            foto4: null
         };
 
-        // Kompresi gambar ringan agar aman disimpan di localStorage tanpa melebihi batas kuota
-        function compressImageDataUrl(dataUrl, maxDim = 450) {
+        // Kompresi gambar otomatis agar semua gambar muat di localStorage (< 5MB) tanpa mengurangi ketajaman cetak
+        function compressImageDataUrl(dataUrl, key = '') {
+            const isPhoto = key.startsWith('foto');
+            const maxDim = isPhoto ? 800 : 350;
+            const mimeType = isPhoto ? 'image/jpeg' : 'image/png';
+            const quality = isPhoto ? 0.72 : 0.9;
+
             return new Promise((resolve) => {
                 if (!dataUrl) return resolve(null);
                 const img = new Image();
@@ -880,7 +938,7 @@
                     canvas.height = h;
                     const ctx = canvas.getContext('2d');
                     ctx.drawImage(img, 0, 0, w, h);
-                    resolve(canvas.toDataURL('image/png'));
+                    resolve(canvas.toDataURL(mimeType, quality));
                 };
                 img.onerror = () => resolve(dataUrl);
                 img.src = dataUrl;
@@ -888,13 +946,22 @@
         }
 
         function updateSavedImageBadges() {
-            ['ttdGuru', 'ttdKepsek', 'logoDinas', 'logoSekolah'].forEach((key) => {
+            ALL_IMAGE_KEYS.forEach((key) => {
                 const badgeEl = document.getElementById(`saved_status_${key}`);
-                if (badgeEl) {
-                    if (savedImages[key]) {
-                        badgeEl.classList.remove('hidden');
-                    } else {
-                        badgeEl.classList.add('hidden');
+                const previewBox = document.getElementById(`preview_box_${key}`);
+                const thumbEl = document.getElementById(`thumb_${key}`);
+
+                if (savedImages[key]) {
+                    if (badgeEl) badgeEl.classList.remove('hidden');
+                    if (previewBox && thumbEl) {
+                        thumbEl.src = savedImages[key];
+                        previewBox.classList.remove('hidden');
+                    }
+                } else {
+                    if (badgeEl) badgeEl.classList.add('hidden');
+                    if (previewBox && thumbEl) {
+                        thumbEl.src = '';
+                        previewBox.classList.add('hidden');
                     }
                 }
             });
@@ -906,10 +973,10 @@
             if (fileInput) fileInput.value = '';
             updateSavedImageBadges();
             saveFormToLocalStorage(false);
-            showToast('Gambar tersimpan berhasil dihapus.');
+            showToast('Gambar berhasil dihapus dari penyimpanan.');
         }
 
-        // Menyimpan seluruh isian formulir serta logo & tanda tangan ke localStorage
+        // Menyimpan seluruh isian formulir serta seluruh gambar ke localStorage
         async function saveFormToLocalStorage(notify = true) {
             try {
                 const formData = {};
@@ -919,12 +986,11 @@
                 });
 
                 // Periksa apakah ada file gambar baru yang dipilih pada input
-                const imageKeys = ['ttdGuru', 'ttdKepsek', 'logoDinas', 'logoSekolah'];
-                for (const key of imageKeys) {
+                for (const key of ALL_IMAGE_KEYS) {
                     const fileInput = document.getElementById(`in_${key}`);
                     if (fileInput && fileInput.files && fileInput.files[0]) {
                         const rawDataUrl = await readFileAsDataURL(fileInput.files[0]);
-                        savedImages[key] = await compressImageDataUrl(rawDataUrl);
+                        savedImages[key] = await compressImageDataUrl(rawDataUrl, key);
                     }
                 }
 
@@ -937,17 +1003,17 @@
                 localStorage.setItem(STORAGE_KEY_FORM, JSON.stringify(payload));
                 updateSavedImageBadges();
                 if (notify) {
-                    showToast('Data berhasil disimpan! Isian akan otomatis dimuat saat web dibuka kembali.');
+                    showToast('Seluruh data teks & gambar berhasil disimpan ke browser!');
                 }
             } catch (err) {
                 console.error('Gagal menyimpan ke localStorage:', err);
                 if (notify) {
-                    showToast('Gagal menyimpan data (kapasitas penyimpanan browser penuh).');
+                    showToast('Kapasitas localStorage penuh! Hapus sebagian foto agar data dapat tersimpan.');
                 }
             }
         }
 
-        // Memuat data tersimpan dari localStorage saat aplikasi dibuka
+        // Memuat data teks & gambar tersimpan dari localStorage saat aplikasi dibuka
         function loadFormFromLocalStorage() {
             try {
                 const raw = localStorage.getItem(STORAGE_KEY_FORM);
@@ -964,18 +1030,30 @@
                 }
 
                 if (parsed.images) {
-                    savedImages = {
-                        ttdGuru: parsed.images.ttdGuru || null,
-                        ttdKepsek: parsed.images.ttdKepsek || null,
-                        logoDinas: parsed.images.logoDinas || null,
-                        logoSekolah: parsed.images.logoSekolah || null
-                    };
+                    ALL_IMAGE_KEYS.forEach((key) => {
+                        savedImages[key] = parsed.images[key] || null;
+                    });
                     updateSavedImageBadges();
                 }
             } catch (err) {
                 console.error('Gagal memuat data dari localStorage:', err);
             }
         }
+
+        // Langsung tampilkan pratinjau & simpan ke state saat user memilih file gambar baru
+        ALL_IMAGE_KEYS.forEach((key) => {
+            const inputEl = document.getElementById(`in_${key}`);
+            if (inputEl) {
+                inputEl.addEventListener('change', async function () {
+                    if (this.files && this.files[0]) {
+                        const rawDataUrl = await readFileAsDataURL(this.files[0]);
+                        savedImages[key] = await compressImageDataUrl(rawDataUrl, key);
+                        updateSavedImageBadges();
+                        await saveFormToLocalStorage(false);
+                    }
+                });
+            }
+        });
 
         document.getElementById('btnSaveForm').addEventListener('click', () => {
             saveFormToLocalStorage(true);
@@ -1218,7 +1296,7 @@
                 const fileLogoDinas = document.getElementById('in_logoDinas').files[0];
                 const fileLogoSekolah = document.getElementById('in_logoSekolah').files[0];
 
-                const [imgData1, imgData2, imgData3, imgData4, rawTtdGuru, rawTtdKepsek, rawLogoDinas, rawLogoSekolah] = await Promise.all([
+                const [rawFoto1, rawFoto2, rawFoto3, rawFoto4, rawTtdGuru, rawTtdKepsek, rawLogoDinas, rawLogoSekolah] = await Promise.all([
                     readFileAsDataURL(file1),
                     readFileAsDataURL(file2),
                     readFileAsDataURL(file3),
@@ -1229,6 +1307,10 @@
                     readFileAsDataURL(fileLogoSekolah)
                 ]);
 
+                const imgData1 = rawFoto1 || savedImages.foto1;
+                const imgData2 = rawFoto2 || savedImages.foto2;
+                const imgData3 = rawFoto3 || savedImages.foto3;
+                const imgData4 = rawFoto4 || savedImages.foto4;
                 const imgTtdGuru = rawTtdGuru || savedImages.ttdGuru;
                 const imgTtdKepsek = rawTtdKepsek || savedImages.ttdKepsek;
                 const imgLogoDinas = rawLogoDinas || savedImages.logoDinas;
