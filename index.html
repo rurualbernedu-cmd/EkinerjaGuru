@@ -248,6 +248,176 @@
             opacity: 1;
             bottom: 50px;
         }
+
+        /* =========================================================
+           MODE LAYAR TERANG (LIGHT MODE) - FUTURISTIC DAYLIGHT GLASS
+           ========================================================= */
+        body.light-mode {
+            background-color: #eef2f6;
+            color: #0f172a;
+        }
+
+        body.light-mode .cyber-grid-bg {
+            background-color: #e9eff6;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.12), transparent 55%),
+                radial-gradient(circle at 85% 85%, rgba(99, 102, 241, 0.10), transparent 50%),
+                linear-gradient(to right, rgba(14, 165, 233, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(14, 165, 233, 0.08) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+        }
+
+        body.light-mode .futuristic-input {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            color: #0f172a;
+        }
+        body.light-mode .futuristic-input::placeholder {
+            color: #94a3b8;
+        }
+        body.light-mode .futuristic-input:hover {
+            border-color: #0284c7;
+        }
+        body.light-mode .futuristic-input:focus {
+            background-color: #ffffff;
+            border-color: #0284c7;
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+        }
+        body.light-mode .futuristic-input option {
+            background-color: #ffffff;
+            color: #0f172a;
+        }
+        body.light-mode input[type="date"].futuristic-input::-webkit-calendar-picker-indicator {
+            filter: none;
+        }
+
+        body.light-mode .futuristic-file {
+            background-color: #f8fafc;
+            border: 1px dashed #94a3b8;
+            color: #475569;
+        }
+        body.light-mode .futuristic-file:hover {
+            border-color: #0284c7;
+            background-color: #f0f9ff;
+        }
+        body.light-mode .futuristic-file::file-selector-button {
+            background: linear-gradient(135deg, #e0f2fe, #e0e7ff);
+            color: #0369a1;
+            border-right: 1px solid #bae6fd;
+        }
+        body.light-mode .futuristic-file::file-selector-button:hover {
+            background: linear-gradient(135deg, #bae6fd, #c7d2fe);
+            color: #0c4a6e;
+        }
+
+        /* Panel & Kartu di Mode Terang */
+        body.light-mode .bg-slate-950\/95 {
+            background-color: rgba(255, 255, 255, 0.97) !important;
+            box-shadow: 10px 0 35px rgba(15, 23, 42, 0.08);
+        }
+        body.light-mode .bg-slate-900\/90,
+        body.light-mode .bg-slate-900\/95,
+        body.light-mode .bg-slate-900\/85 {
+            background-color: rgba(255, 255, 255, 0.92) !important;
+        }
+        body.light-mode .bg-slate-900\/75,
+        body.light-mode .bg-slate-900\/60 {
+            background-color: rgba(255, 255, 255, 0.88) !important;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+        }
+        body.light-mode .bg-slate-950\/60,
+        body.light-mode .bg-slate-950\/50,
+        body.light-mode .bg-slate-900 {
+            background-color: #f1f5f9 !important;
+        }
+        body.light-mode .from-slate-900\/90.to-indigo-950\/40 {
+            background: linear-gradient(135deg, #f0f9ff, #eef2ff) !important;
+        }
+
+        /* Border di Mode Terang */
+        body.light-mode .border-slate-800,
+        body.light-mode .border-slate-800\/80,
+        body.light-mode .border-slate-800\/90 {
+            border-color: #e2e8f0 !important;
+        }
+        body.light-mode .border-cyan-500\/20,
+        body.light-mode .border-cyan-500\/25 {
+            border-color: rgba(2, 132, 199, 0.25) !important;
+        }
+
+        /* Teks UI di Mode Terang (Tidak memengaruhi kertas A4) */
+        body.light-mode .text-slate-200,
+        body.light-mode .text-slate-300 {
+            color: #1e293b !important;
+        }
+        body.light-mode .text-slate-400 {
+            color: #64748b !important;
+        }
+        body.light-mode #instructionPanel h2,
+        body.light-mode #instructionPanel strong.text-white {
+            color: #0f172a !important;
+        }
+        body.light-mode .text-cyan-300,
+        body.light-mode .text-cyan-400 {
+            color: #0284c7 !important;
+        }
+        body.light-mode .text-indigo-300,
+        body.light-mode .text-indigo-400 {
+            color: #4338ca !important;
+        }
+        body.light-mode .text-sky-300,
+        body.light-mode .text-sky-400 {
+            color: #0369a1 !important;
+        }
+        body.light-mode .text-emerald-300,
+        body.light-mode .text-emerald-400 {
+            color: #047857 !important;
+        }
+        body.light-mode .bg-gradient-to-r.from-white.via-cyan-100.to-cyan-400 {
+            background-image: linear-gradient(to right, #0f172a, #0369a1, #0284c7) !important;
+        }
+
+        /* Tombol sekunder & aksi di Mode Terang */
+        body.light-mode #btnThemeToggle {
+            background-color: #f1f5f9;
+            border-color: #cbd5e1;
+            color: #0f172a;
+        }
+        body.light-mode #btnThemeToggle:hover {
+            background-color: #e2e8f0;
+        }
+        body.light-mode #actionButtons button:first-child {
+            background-color: #f8fafc;
+            border-color: #cbd5e1;
+            color: #1e293b;
+        }
+        body.light-mode #actionButtons button:first-child:hover {
+            background-color: #e2e8f0;
+        }
+        body.light-mode #btnSaveForm {
+            background-color: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #047857;
+        }
+        body.light-mode #btnSaveForm:hover {
+            background-color: #d1fae5;
+        }
+        body.light-mode #btnSaveApiKey {
+            background-color: #e0f2fe;
+            border-color: #7dd3fc;
+            color: #0369a1;
+        }
+
+        /* Scrollbar Mode Terang */
+        body.light-mode::-webkit-scrollbar-track,
+        body.light-mode *::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        body.light-mode::-webkit-scrollbar-thumb,
+        body.light-mode *::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border: 1px solid #94a3b8;
+        }
     </style>
 </head>
 <body class="h-screen overflow-hidden text-slate-200 bg-[#060913]">
@@ -256,7 +426,7 @@
         <!-- SIDEBAR FORM INPUT -->
         <div class="w-full md:w-[45%] lg:w-[40%] bg-slate-950/95 border-r border-cyan-500/20 h-full overflow-y-auto flex flex-col shadow-[10px_0_40px_rgba(0,0,0,0.6)] z-10 relative">
             <!-- Header Sidebar Futuristik -->
-            <div class="p-5 bg-slate-900/90 backdrop-blur-xl border-b border-cyan-500/20 text-white sticky top-0 z-20 flex justify-between items-center gap-3">
+            <div class="p-5 bg-slate-900/90 backdrop-blur-xl border-b border-cyan-500/20 text-white sticky top-0 z-20 flex flex-wrap justify-between items-center gap-3">
                 <div class="flex items-center gap-3.5">
                     <div class="relative w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-500/20 to-indigo-600/30 border border-cyan-400/40 flex items-center justify-center flex-shrink-0 shadow-[0_0_20px_rgba(56,189,248,0.25)]">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -273,12 +443,23 @@
                         <p class="text-slate-400 text-xs mt-0.5">Generator Laporan E-Kinerja Harian Guru</p>
                     </div>
                 </div>
-                <button type="button" id="btnTestFill" class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 text-xs font-bold py-2 px-3.5 rounded-xl shadow-[0_0_20px_rgba(245,158,11,0.3)] transition-all duration-200 flex items-center gap-1.5 cursor-pointer flex-shrink-0 active:scale-95">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                    Isi Data Contoh
-                </button>
+                <div class="flex items-center gap-2 flex-shrink-0">
+                    <button type="button" id="btnThemeToggle" class="bg-slate-800/90 hover:bg-slate-700/90 text-cyan-300 border border-cyan-500/35 text-xs font-semibold py-2 px-3 rounded-xl shadow-sm transition-all duration-200 flex items-center gap-1.5 cursor-pointer active:scale-95" title="Ganti antara Mode Terang dan Mode Gelap">
+                        <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-600 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                        <span id="themeToggleLabel">Mode Layar</span>
+                    </button>
+                    <button type="button" id="btnTestFill" class="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 text-xs font-bold py-2 px-3.5 rounded-xl shadow-[0_0_20px_rgba(245,158,11,0.3)] transition-all duration-200 flex items-center gap-1.5 cursor-pointer flex-shrink-0 active:scale-95">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        Isi Data Contoh
+                    </button>
+                </div>
             </div>
             
             <form id="ekinerjaForm" class="p-5 sm:p-6 space-y-5 flex-grow">
@@ -1061,7 +1242,38 @@
             saveFormToLocalStorage(true);
         });
 
+        // --- MANAJEMEN MODE LAYAR (TERANG / GELAP) ---
+        const STORAGE_KEY_THEME = 'ekinerja_ui_theme';
+
+        function applyScreenTheme(theme) {
+            const isLight = theme === 'light';
+            const iconSun = document.getElementById('iconSun');
+            const iconMoon = document.getElementById('iconMoon');
+            const label = document.getElementById('themeToggleLabel');
+
+            if (isLight) {
+                document.body.classList.add('light-mode');
+                if (iconSun) iconSun.classList.add('hidden');
+                if (iconMoon) iconMoon.classList.remove('hidden');
+                if (label) label.textContent = 'Mode Layar: Terang';
+            } else {
+                document.body.classList.remove('light-mode');
+                if (iconSun) iconSun.classList.remove('hidden');
+                if (iconMoon) iconMoon.classList.add('hidden');
+                if (label) label.textContent = 'Mode Layar: Gelap';
+            }
+        }
+
+        document.getElementById('btnThemeToggle').addEventListener('click', function () {
+            const nextTheme = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+            localStorage.setItem(STORAGE_KEY_THEME, nextTheme);
+            applyScreenTheme(nextTheme);
+            showToast(nextTheme === 'light' ? 'Beralih ke Mode Layar Terang' : 'Beralih ke Mode Layar Gelap');
+        });
+
         window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem(STORAGE_KEY_THEME) || 'dark';
+            applyScreenTheme(savedTheme);
             updateApiKeyBadge();
             loadFormFromLocalStorage();
         });
